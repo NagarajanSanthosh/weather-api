@@ -1,13 +1,12 @@
 
 <!-- Clone this project  -->
-git clone 
-<code>https://github.com/NagarajanSanthosh/weather-api.git</code>
+<pre><code> git clone https://github.com/NagarajanSanthosh/weather-api.git </code></pre>
 <h2>To use backend </h2>
 npm init -y
 npm install express nodemon axios cors dotenv
 
 <h2>To use frontend </h2>
-npm create vite@latest frontend
-cd frontend
-npm install
-npm run dev
+<code>npm create vite@latest frontend</code>
+<code>cd frontend</code>
+<code>npm install</code>
+<code>npm run dev</code>
