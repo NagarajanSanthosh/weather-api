@@ -1,7 +1,7 @@
 
 <!-- Clone this project  -->
 git clone 
-
+<code>https://github.com/NagarajanSanthosh/weather-api.git</code>
 <h2>To use backend </h2>
 npm init -y
 npm install express nodemon axios cors dotenv
