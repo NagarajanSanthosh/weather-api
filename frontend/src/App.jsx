@@ -1,27 +1,27 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import WeatherForm from './components/WeatherForm';
-import WeatherDisplay from './components/WeatherDisplay';
-
-function App() {
-  const [weather, setWeather] = useState(null);
-
-  const getWeather = async (city) => {
-    try {
-      const response = await axios.get(`http://localhost:3000/api/weather?city=${city}`);
-      setWeather(response.data);
-    } catch (error) {
-      console.error('Error fetching weather data', error);
+import React from "react";
+import Weather from "./components/Weather";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#ff0000',
+    },
+    background: {
+      default: "#1e293b",
+      paper: "#1f2937",
     }
-  };
-
+  }
+})
+function App() {
   return (
     <div>
-      <h1>Weather App</h1>
-      <WeatherForm onGetWeather={getWeather} />
-      <WeatherDisplay weather={weather} />
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <Weather />
+      </ThemeProvider>
     </div>
-  );
+  )
 }
-
 export default App;
