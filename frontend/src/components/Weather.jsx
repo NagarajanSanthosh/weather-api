@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import SearchBox from './SearchBox';
+import {API} from './weather_api'
 import { Card, CardContent, Typography, CircularProgress } from '@mui/material';
 const weatherDescriptions = {
     "Thunderstorm with light rain": "../assets/thunderstorm.png",
@@ -68,7 +69,8 @@ function Weather() {
     async function fetchWeatherData(param) {
         setLoading(true);
         try {
-            const apiKey = "8df5cef66064669e29906bbce7272bc6";
+            
+            const apiKey = API;
             if (param === '') param = 'madurai';
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${param}&appid=${apiKey}`;
             const response = await fetch(url);
