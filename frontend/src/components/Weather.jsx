@@ -70,7 +70,7 @@ function Weather() {
         setLoading(true);
         try {
             
-            const apiKey = API;
+            const apiKey = API
             if (param === '') param = 'madurai';
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${param}&appid=${apiKey}`;
             const response = await fetch(url);
